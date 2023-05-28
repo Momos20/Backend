@@ -25,6 +25,7 @@ Este comando abrirá una sesión de bash dentro del contenedor de MySQL.
 mysql -u companies -h mysql -p companies < ./db/creation.sql
 ```
 Esto importará el script "creation.sql" y creará la base de datos necesaria para la aplicación.
+
 6.  Después de crear la base de datos, puedes acceder a MariaDB ejecutando el siguiente comando:
 ```
 mysql -u companies -h mysql -p
