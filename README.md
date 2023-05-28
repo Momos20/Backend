@@ -19,6 +19,7 @@
 docker-compose run --rm -v ${PWD}:/opt/src -w /opt/src mysql bash
 ```
 Este comando abrirá una sesión de bash dentro del contenedor de MySQL.
+
 5.  Una vez dentro del contenedor de MySQL, ejecuta el siguiente comando para crear la base de datos:
 ```
 mysql -u companies -h mysql -p companies < ./db/creation.sql
