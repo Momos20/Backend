@@ -1,0 +1,42 @@
+version: "3.3"
+services:
+    flask:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: repo/companies-backend:1
+        working_dir: /opt/api/
+        command: bash run.sh
+        ports:
+            - 5000:5000
+        volumes:
+            - ./api/:/opt/api/
+        environment:
+            MYSQL_HOST: 172.18.0.3
+            MYSQL_DATABASE: companies
+            MYSQL_USER: companies
+            MYSQL_PASSWORD: password
+            APP_ENV: DEV
+        stdin_open: true
+        tty: true
+        expose:
+            - 5000
+        networks:
+          flask-backend:
+                ipv4_address: 172.18.0.2
+    mysql-2:
+        image: docker.io/mariadb:10.1
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: client
+            MYSQL_USER: client
+            MYSQL_PASSWORD: password
+        networks:
+            flask-backend:
+                ipv4_address: 172.18.0.4
+networks:
+    flask-backend:
+        driver: bridge
+        ipam:
+            config:
+            - subnet: 172.18.0.0/16
