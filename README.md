@@ -35,8 +35,6 @@ Se te solicitará ingresar la contraseña, que en este caso es "password".
 Ahora estás listo para trabajar con la aplicación. Asegúrate de seguir las instrucciones adicionales proporcionadas en el repositorio o en la documentación para configurar y utilizar correctamente la aplicación Flask.
 
 ## Autores
-- Tatiana Camila Córdoba Acosta
 - Sara Pérez Higuita
 - Juan Camilo Cataño Zuleta
-- Daniel Enrique López Yepes
 
